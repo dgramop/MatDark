@@ -29,3 +29,7 @@ We'll keep adding new features, and making hard things easy (like the notificati
 We might add universal configuration files, allowing you to customize the look of MatDark
 
 We want to rethink the library, by breaking conventions and stereotypes in order to give the user and developer the best experience.
+
+MatDark is _not_ to be confused with Material, or Material Design, although its name is derived from Material + Flat. 
+
+@AutinDroid runs a fork with shadows added to MatDark (and other features with the flatness removed)
