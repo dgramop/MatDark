@@ -14,3 +14,16 @@ Need to open a modal?
 ```
 alert("This is a modal <b>That also supports HTML</b>");
 ```
+
+How about a little on-page notification?
+
+```
+toast("Hi!")
+```
+
+
+We'll keep adding new features, and making hard things easy (like the notifications API.)
+
+We might add universal configuration files, allowing you to customize the look of MatDark
+
+We want to rethink the library, by breaking conventions and stereotypes in order to give the user and developer the best experience.
