@@ -1,7 +1,7 @@
+: ![](matdarklogo.png) :
+
 # MatDark
 MatDark is _the_ CSS and JS framework to make websites easier for the user to use and the developer to develop!
-
-![](matdarklogo.png)
 
 It:
 - simplifies coding by overriding native methods
