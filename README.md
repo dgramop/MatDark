@@ -32,4 +32,8 @@ We want to rethink the library, by breaking conventions and stereotypes in order
 
 MatDark is _not_ to be confused with Material, or Material Design, although its name is derived from Material + Flat. 
 
-@AutinDroid runs a fork with shadows added to MatDark (and other features with the flatness removed)
+
+## Active Contributers
+
+Thanks to AutinDroid for helping out on this project. Although he is somewhat new to styling, he has grown by leaps and bounds and his skills
+
