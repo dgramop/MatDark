@@ -83,9 +83,9 @@ window.confirm=function(text)
   }
 }*/
 
-document.getElementsByTagName("code").forEach(function(tag){
+/*document.getElementsByTagName("code").forEach(function(tag){
   tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
-})
+})*/
 
 [].forEach.call(document.getElementsByTagName("header").getElementsByClassName("title"), function(title){
     title.onclick=function(){
