@@ -3,6 +3,9 @@
 # MatDark
 MatDark is _the_ CSS and JS framework to make websites easier for the user to use and the developer to develop!
 
+Styles don't distract, they enhance
+
+
 It:
 - simplifies coding by overriding native methods
 - uses easy to guess class names (like "card" instead of stuff like "Mat_Dark-card" and crap like that)
@@ -32,4 +35,7 @@ We want to rethink the library, by breaking conventions and stereotypes in order
 
 MatDark is _not_ to be confused with Material, or Material Design, although its name is derived from Material + Flat. 
 
-@AutinDroid runs a fork with shadows added to MatDark (and other features with the flatness removed)
+
+## Active Contributers
+
+Thanks to AutinDroid for helping out on this project. Although he is somewhat new to styling, his skills have surpassed most. He shares with MatDark the same sense of subtlty in animation and in display: simple, and easy.

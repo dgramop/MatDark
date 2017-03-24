@@ -83,6 +83,13 @@ window.confirm=function(text)
   }
 }*/
 
-document.getElementsByTagName("code").forEach(function(tag){
+/*document.getElementsByTagName("code").forEach(function(tag){
   tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
+})*/
+
+Array.from(document.getElementsByTagName("header")[0]).forEach(function(header){Array.from(header.getElementsByClassName("title")).forEach(function(title){
+    title.onclick=function(){
+      window.location.href="/";
+    }
+})
 })
