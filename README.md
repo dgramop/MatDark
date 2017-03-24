@@ -1,6 +1,8 @@
 ![](matdarklogo.png)
 
-# MatDark
+[![CodeFactor](https://www.codefactor.io/repository/github/dgramop/matdark/badge)](https://www.codefactor.io/repository/github/dgramop/matdark) 
+
+# MatDark 
 MatDark is _the_ CSS and JS framework to make websites easier for the user to use and the developer to develop!
 
 Styles don't distract, they enhance
