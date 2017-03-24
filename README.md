@@ -35,5 +35,5 @@ MatDark is _not_ to be confused with Material, or Material Design, although its 
 
 ## Active Contributers
 
-Thanks to AutinDroid for helping out on this project. Although he is somewhat new to styling, he has grown by leaps and bounds and his skills
+Thanks to AutinDroid for helping out on this project. Although he is somewhat new to styling, his skills have surpassed most. He shares with MatDark the same sense of subtlty in animation and in display, simple, and easy. Animations that don't distract, instead enhance
 
