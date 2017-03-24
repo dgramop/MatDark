@@ -115,7 +115,7 @@ window.onscroll=function()
       elment.style.opacity='0';
     })
   }
-  else if(window.scrollY<=document.body.clientHeight+window.headerTrigger)
+  else if(window.scrollY<=document.body.clientHeight+80)
   {
     Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
       elment.style.opacity='1';
