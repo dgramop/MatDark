@@ -87,8 +87,7 @@ document.getElementsByTagName("code").forEach(function(tag){
   tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
 })
 
-document.getElementsByTagName("header").forEach(function(header){
-  header.innerHTML=header.getElementsByClassName("title").forEach(function(title){
+document.getElementsByTagName("header").getElementsByClassName("title").forEach(function(title){
     title.onclick=function(){
       window.location.href="/"
     }
