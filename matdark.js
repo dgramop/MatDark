@@ -90,3 +90,43 @@ window.confirm=function(text)
 Array.from(document.querySelector('header > .title')).forEach(function(element){
   element.onclick=function(){window.location.href="/"} 
 })
+
+Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
+  console.log("tick");
+  elment.onclick=function()
+  {
+    try
+    {
+      console.log(this.getAttribute("href"));
+      window.location.href=this.getAttribute("href")
+    }
+    catch (e)
+    {
+      //tab has nothing set, could spit out error... nah
+    }
+  }
+})
+
+window.onscroll=function()
+{
+  if(window.scrollY<=document.body.clientHeight+50)
+  {
+    Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
+      elment.style.opacity='0';
+    })
+  }
+  else if(window.scrollY<=document.body.clientHeight+window.headerTrigger)
+  {
+    Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
+      elment.style.opacity='1';
+      elment.style.position="fixed";
+    })
+  }
+  else
+  {
+    Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
+      elment.style.opacity='0.75';
+      elment.style.position="fixed";
+    })
+  }
+}
