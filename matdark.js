@@ -87,7 +87,7 @@ window.confirm=function(text)
   tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
 })*/
 
-[].forEach.call(document.getElementsByTagName("header").getElementsByClassName("title"), function(title){
+Array.forEach.call(document.getElementsByTagName("header").getElementsByClassName("title"), function(title){
     title.onclick=function(){
       window.location.href="/"
     }
