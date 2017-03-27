@@ -48,6 +48,8 @@ header.fix {
 .tabs
 {
   float:right;
+  padding:1em;
+  margin:1em;
 }
 
 .tab
