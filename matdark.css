@@ -45,11 +45,10 @@ header.fix {
   header.fix:hover {
   box-shadow: 0 14px 100px  rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+
 .tabs
 {
   float:right;
-  padding:1em;
-  margin:1em;
 }
 
 .tab
@@ -64,6 +63,7 @@ header.fix {
   -moz-user-select: none;
   -khtml-user-select: none;
   -ms-user-select: none;
+  top:50%;
 }
 
 input
