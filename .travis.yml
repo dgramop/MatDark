@@ -1,6 +1,6 @@
-script:
-- "build/travisbuild.rb"
 sudo: required
+script:
+- "sudo build/travisbuild.rb"
 language: sass
 before_install:
 - sudo gem install sass
