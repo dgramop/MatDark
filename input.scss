@@ -33,3 +33,24 @@ textarea {
     border-color: #6bff74;
   }
 }
+
+.button {
+  display: inline-block;
+  padding: 0.75em;
+  margin: 0.75em;
+  border: 2px solid white;
+  /*Input style involves white borders*/
+  background-color: black;
+  border-radius: .5em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  transition: background-color 250ms;
+  &:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+  }
+}
