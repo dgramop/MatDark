@@ -3,4 +3,4 @@ script:
 sudo: required
 language: sass
 before_install:
-- gem install sass
+- sudo gem install sass
