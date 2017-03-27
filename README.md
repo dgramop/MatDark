@@ -1,6 +1,6 @@
 ![](matdarklogo.png)
 
-[![CodeFactor](https://www.codefactor.io/repository/github/dgramop/matdark/badge)](https://www.codefactor.io/repository/github/dgramop/matdark) 
+[![CodeFactor](https://www.codefactor.io/repository/github/dgramop/matdark/badge)](https://www.codefactor.io/repository/github/dgramop/matdark)  [![Build Status](https://travis-ci.org/dgramop/MatDark.svg?branch=master)](https://travis-ci.org/dgramop/MatDark)
 
 # MatDark 
 MatDark is _the_ CSS and JS framework to make websites easier for the user to use and the developer to develop!
