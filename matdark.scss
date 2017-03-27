@@ -1,4 +1,5 @@
 @import 'header';
+@import 'input';
 
 * {
   outline: none;
@@ -13,42 +14,6 @@ hr {
   background-color: #1c1c1c;
   color: white;
   font-family: 'Roboto';
-}
-
-input {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background-color: black;
-  color: white;
-  margin: 1em;
-  &[type=text], &[type=email] {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 3px solid white;
-    margin: 1em;
-    -webkit-transition: border-bottom-color 1s;
-    transition: border-bottom-color 1s;
-  }
-  &[type=text]:focus, &[type=email]:focus {
-    border-bottom-color: #6bff74;
-  }
-}
-
-textarea {
-  width: 80%;
-  height: 10rem;
-  border: 2px solid white;
-  background-color: black;
-  color: white;
-  margin: 1em;
-  padding: 1em;
-  -webkit-transition: border-color 1s;
-  transition: border-color 1s;
-  &:focus {
-    border-color: #6bff74;
-  }
 }
 
 .card {
@@ -122,27 +87,6 @@ textarea {
   bottom: 1em;
   left: 1em;
   margin: 1em;
-}
-
-.button {
-  display: inline-block;
-  padding: 0.75em;
-  margin: 0.75em;
-  border: 2px solid white;
-  /*Input style involves white borders*/
-  background-color: black;
-  border-radius: .5em;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -ms-user-select: none;
-  cursor: pointer;
-  transition: background-color 250ms;
-  &:hover {
-    background-color: white;
-    color: black;
-    border-color: black;
-  }
 }
 
 .toastContainer {
