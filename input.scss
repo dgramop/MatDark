@@ -1,0 +1,35 @@
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: black;
+  color: white;
+  margin: 1em;
+  &[type=text], &[type=email] {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid white;
+    margin: 1em;
+    -webkit-transition: border-bottom-color 1s;
+    transition: border-bottom-color 1s;
+  }
+  &[type=text]:focus, &[type=email]:focus {
+    border-bottom-color: #6bff74;
+  }
+}
+
+textarea {
+  width: 80%;
+  height: 10rem;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  margin: 1em;
+  padding: 1em;
+  -webkit-transition: border-color 1s;
+  transition: border-color 1s;
+  &:focus {
+    border-color: #6bff74;
+  }
+}
