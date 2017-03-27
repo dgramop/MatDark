@@ -1,0 +1,73 @@
+.toastContainer {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+}
+
+.toast {
+  background-color: black;
+  padding: 1em;
+  margin: 0.5em;
+  border: 4px solid yellow;
+  -webkit-transition: visibility 0s, opacity 1s linear;
+  transition: visibility 0s, opacity 1s linear;
+}
+
+.modal {
+  z-index: 99;
+  width: 50%;
+  height: 50%;
+  background-color: #232323;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  padding: 1em;
+  border: 2px solid lime;
+}
+
+.modalText {
+  overflow-x: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+.modalButtonContainer {
+  width: 100%;
+  height: 1.5em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+}
+
+.closeModal {
+  background-color: orange;
+  padding: 1em;
+  margin: 1em;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+}
+
+.modalButton {
+  background-color: black;
+  border: 1px solid white;
+  padding: 1em;
+  margin: 1em;
+  /*width: 5em;
+  height: 1.5em;*/
+  cursor: pointer;
+  display: inline-block;
+  &.alert {
+    background-color: red;
+  }
+  &.info {
+    background-color: blue;
+  }
+  &.success {
+    background-color: lime;
+  }
+}
