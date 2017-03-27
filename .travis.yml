@@ -1,6 +1,6 @@
 sudo: required
 script:
-- "sudo ruby build/travisbuild.rb"
+- sass matdark.scss build/matdark.css
 language: sass
 before_install:
 - sudo gem install sass
