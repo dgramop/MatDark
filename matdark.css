@@ -50,6 +50,7 @@ header.fix {
 {
   height:100%;
   float:right;
+  display:inline;
 }
 
 .tab
