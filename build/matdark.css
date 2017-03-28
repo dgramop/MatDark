@@ -1,5 +1,5 @@
 header {
-  vertical-align: text-center;
+  vertical-align: center;
   margin-bottom: 2rem;
   padding: 1em;
   margin: 1em; }
@@ -28,11 +28,11 @@ header {
   float: right;
   display: inline;
   text-align: center;
-  vertical-align: text-center; }
+  vertical-align: center; }
 
 .tab {
   vertical-align: center;
-  text-align: text-center;
+  text-align: center;
   display: inline;
   padding: 0.75em;
   margin: 0.75em;
