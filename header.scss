@@ -3,6 +3,7 @@ header {
   margin-bottom: 2rem;
   padding: 1em;
   margin: 1em;
+  text-align:center;
   > .title {
     display: inline-block;
     font-size: 1.6em;
@@ -31,11 +32,13 @@ header {
   height: 100%;
   float: right;
   display: inline;
+  text-align:center;
   vertical-align:center;
 }
 
 .tab {
   vertical-align:center;
+  text-align:center;
   display: inline;
   padding: 0.75em;
   margin: 0.75em;
