@@ -1,16 +1,5 @@
-* {
-  outline: none; }
-
-hr {
-  color: white;
-  border: 1px solid white; }
-
-.dark-body {
-  background-color: #1c1c1c;
-  color: white;
-  font-family: 'Roboto'; }
-
 header {
+  vertical-align: center;
   margin-bottom: 2rem;
   padding: 1em;
   margin: 1em; }
@@ -37,9 +26,11 @@ header {
 .tabs {
   height: 100%;
   float: right;
-  display: inline; }
+  display: inline;
+  vertical-align: center; }
 
 .tab {
+  vertical-align: center;
   display: inline;
   padding: 0.75em;
   margin: 0.75em;
@@ -82,67 +73,6 @@ textarea {
   transition: border-color 1s; }
   textarea:focus {
     border-color: #6bff74; }
-
-.card {
-  border: 3px solid black;
-  margin: 1em;
-  padding: 2em;
-  background-color: black;
-  border-radius: 0.5em;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-  .card:hover {
-    box-shadow: 0 14px 100px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-  .card > .title {
-    font-size: 1.2em;
-    padding: 0.75em;
-    margin: 0.25em; }
-  .card > .text {
-    padding: 0.75em;
-    margin: 0.25em; }
-
-.pin-tr {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  margin: 1em; }
-
-.pin-tl {
-  position: fixed;
-  top: 1em;
-  left: 1em;
-  margin: 1em; }
-
-.pin-br {
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
-  margin: 1em; }
-
-.bubble-menu {
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
-  margin: 1em;
-  border: 3px solid lime;
-  background-color: lime;
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 5em;
-  cursor: pointer;
-  transition: all 0.3s linear; }
-  .bubble-menu:hover {
-    transform: scale(10);
-    position: fixed;
-    right: 12em;
-    bottom: 12em; }
-
-.pin-bl {
-  position: fixed;
-  bottom: 1em;
-  left: 1em;
-  margin: 1em; }
 
 .button {
   display: inline-block;
@@ -226,6 +156,79 @@ textarea {
     background-color: blue; }
   .modalButton.success {
     background-color: lime; }
+
+* {
+  outline: none; }
+
+hr {
+  color: white;
+  border: 1px solid white; }
+
+.dark-body {
+  background-color: #1c1c1c;
+  color: white;
+  font-family: 'Roboto'; }
+
+.card {
+  border: 3px solid black;
+  margin: 1em;
+  padding: 2em;
+  background-color: black;
+  border-radius: 0.5em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .card:hover {
+    box-shadow: 0 14px 100px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+  .card > .title {
+    font-size: 1.2em;
+    padding: 0.75em;
+    margin: 0.25em; }
+  .card > .text {
+    padding: 0.75em;
+    margin: 0.25em; }
+
+.pin-tr {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  margin: 1em; }
+
+.pin-tl {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  margin: 1em; }
+
+.pin-br {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  margin: 1em; }
+
+.bubble-menu {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  margin: 1em;
+  border: 3px solid lime;
+  background-color: lime;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 5em;
+  cursor: pointer;
+  transition: all 0.3s linear; }
+  .bubble-menu:hover {
+    transform: scale(10);
+    position: fixed;
+    right: 12em;
+    bottom: 12em; }
+
+.pin-bl {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  margin: 1em; }
 
 .badge {
   border: 1px solid lime;
