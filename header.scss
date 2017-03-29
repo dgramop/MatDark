@@ -3,7 +3,6 @@ header {
   margin-bottom: 2rem;
   padding: 1em;
   margin: 1em;
-  background-color: #1f1f1f;/*change later, placeholder for now*/
   > .title {
     display: inline-block;
     font-size: 1.6em;
@@ -26,25 +25,23 @@ header {
       box-shadow: 0 14px 100px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
   }
-}
-
-.tabs {
-  height: 100%;
-  float: right;
-  display: inline-block;
-  vertical-align:middle;
-}
-
-.tab {
-  vertical-align:middle;
-  display: inline-block;
-  padding: 0.75em;
-  margin: 0.75em;
-  border: 2px solid #0c0c0c;
-  background-color: #0c0c0c;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -ms-user-select: none;
+  .tabs {
+    height: 100%;
+    float: right;
+    display: inline-block;
+    vertical-align:middle;
+    .tab {
+      vertical-align:middle;
+      display: inline-block;
+      padding: 0.75em;
+      margin: 0.75em;
+      border: 2px solid #0c0c0c;
+      background-color: #0c0c0c;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -ms-user-select: none;
+    }
+  }
 }
