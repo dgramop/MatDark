@@ -57,38 +57,22 @@ window.alert=function(text)
 {
   modal(text);
 }
-/*
-//Not working
-var univconprom;
+
+
+//depricated!!!!!
 window.confirm=function(text)
 {
-  try
-  {
-    univconprom=new Promise(function (value){return value;});
-    univconprom.resolve(true).then(
-    function (value){
-      return true;
-    },
-    function(value)
-    {
-      return false;
-    })
-    modal(text, {'name': 'Ok', 'callback': 'univconprom.resolve(true)'}, {'name': 'Cancel', 'callback': 'univconprom.resolve(false)'});
-  }
-  catch (e)
-  {
-    console.log("promises not supported in your browser. degrading gracefully :) \nThe error")
-    console.log(e)
-    return nativeconfirm(text)
-  }
-}*/
+  console.log("Just like the old and crappy version, the modal will still hold up your thread.\n This is because I can't assume that you are using promises etc. \n We may add a promseConfirm() method using promises, same with a prompt. \n\n This is in keeping with the whole native override stuff, it needs to be super-easy to transfer through\n\n Because of the shitty underlying code, this method is already depricated, but probably won't be taken out any release soon\n");
+  modal(text, {'name': 'Ok', 'callback': 'univconprom.resolve(true)'}, {'name': 'Cancel', 'callback': 'univconprom.resolve(false)'});
+
+}
 
 /*document.getElementsByTagName("code").forEach(function(tag){
   tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
 })*/
 
 Array.from(document.querySelector('header > .title')).forEach(function(element){
-  element.onclick=function(){window.location.href="/"} 
+  element.onclick=function(){window.location.href="/"}
 })
 
 Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
