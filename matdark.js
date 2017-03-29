@@ -62,7 +62,7 @@ window.alert=function(text)
 //Shitty code alert
 window.confirm=function(text)
 {
-  nativeconfirm(text+"\n\n Whoever is the developer of this website is using a feature that is not in style with the stylesheet\n\nIf you are the developer, use nativeconfirm() to not deal with this message. confirm() is not overriden because of the blocking functionality.")
+  nativeconfirm(text+"\n\n Whoever is the developer of this website is using a feature that is not in style with the stylesheet\n\nIf you are the developer, use nativeconfirm() to not deal with this message. confirm() is not overriden because of the blocking functionality.\n\n A promise based version may be added later.")
 }
 /*document.getElementsByTagName("code").forEach(function(tag){
   tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
