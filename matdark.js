@@ -58,13 +58,18 @@ window.alert=function(text)
   modal(text);
 }
 
-
+var confirms[]=Array();
 //depricated!!!!!
 window.confirm=function(text)
 {
-  console.log("Just like the old and crappy version, the modal will still hold up your thread.\n This is because I can't assume that you are using promises etc. \n We may add a promseConfirm() method using promises, same with a prompt. \n\n This is in keeping with the whole native override stuff, it needs to be super-easy to transfer through\n\n Because of the shitty underlying code, this method is already depricated, but probably won't be taken out any release soon\n");
-  modal(text, {'name': 'Ok', 'callback': 'univconprom.resolve(true)'}, {'name': 'Cancel', 'callback': 'univconprom.resolve(false)'});
+  var now=Date.now();
+  console.log("THIS FUNCTION IS A HACK!:Just like the old and crappy version, the modal will still hold up your thread.\n This is because I can't assume that you are using promises etc. \n We may add a promseConfirm() method using promises, same with a prompt. \n\n This is in keeping with the whole native override stuff, it needs to be super-easy to transfer through\n\n Because of the shitty underlying code, this method is already depricated, but probably won't be taken out any release soon\n");
+  modal(text, {'name': 'Ok', 'callback': 'confirmed('+now+')'}, {'name': 'Cancel', 'callback': 'confirmed('+now+')'});
+}
 
+function confirmed(id)
+{
+  confirms.push(id);
 }
 
 /*document.getElementsByTagName("code").forEach(function(tag){
