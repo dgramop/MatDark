@@ -1,6 +1,6 @@
 sudo: required
 script:
-- sass matdark.scss build/matdark.css
+- sass main.scss build/matdark.css
 language: sass
 before_install:
 - sudo gem install sass
