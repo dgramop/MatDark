@@ -22,25 +22,23 @@ header {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
     header.fix:hover {
       box-shadow: 0 14px 100px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-
-.tabs {
-  height: 100%;
-  float: right;
-  display: inline-block;
-  vertical-align: middle; }
-
-.tab {
-  vertical-align: middle;
-  display: inline-block;
-  padding: 0.75em;
-  margin: 0.75em;
-  border: 2px solid #0c0c0c;
-  background-color: #0c0c0c;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -ms-user-select: none; }
+  header .tabs {
+    height: 100%;
+    float: right;
+    display: inline-block;
+    vertical-align: middle; }
+    header .tabs .tab {
+      vertical-align: middle;
+      display: inline-block;
+      padding: 0.75em;
+      margin: 0.75em;
+      border: 2px solid #0c0c0c;
+      background-color: #0c0c0c;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -ms-user-select: none; }
 
 input {
   border-top: none;
@@ -77,21 +75,24 @@ textarea {
   display: inline-block;
   padding: 0.75em;
   margin: 0.75em;
-  border: 2px solid white;
+  border: 1px clear white;
   /*Input style involves white borders*/
-  background-color: black;
+  background-color: #0f0f0f;
   border-radius: .5em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
   -ms-user-select: none;
   cursor: pointer;
-  transition: background-color 250ms; }
+  transition: background-color 500ms; }
   .button:hover {
-    background-color: white;
-    color: black;
-    border-color: black; }
-
+    background-color: black;
+    border-color: black;
+    /* This animation functions as a gentle reminder to click or not to click */
+    animation: blinker 500ms ease infinite alternate; }
+@keyframes blinker {
+  to {
+    opacity: 0.65; } }
 .toastContainer {
   position: fixed;
   top: 1em;
@@ -218,7 +219,7 @@ hr {
   cursor: pointer;
   transition: all 0.3s linear; }
   .bubble-menu:hover {
-    transform: scale(10);
+    transform: scale(2);
     position: fixed;
     right: 12em;
     bottom: 12em; }
