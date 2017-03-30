@@ -279,15 +279,4 @@ a {
 .info {
   border-color: #d5a497; }
 
-/*scss matlight.scss build/matlight.css */
-/* keep colors at botom*/
-.alert {
-  border-color: red; }
-
-.success {
-  border-color: green; }
-
-.info {
-  border-color: skyblue; }
-
-/*# sourceMappingURL=matlight.css.map */
+/*# sourceMappingURL=matdark.css.map */

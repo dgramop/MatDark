@@ -61,7 +61,8 @@
   <div class="button" onclick="toast('Hey')">toast('Hey')</div><div class="button" onclick="toast('Alelt', 'alert')">toast('Alelt', 'alert')</div><div class="button" onclick="toast('You are in danger', 'info')">toast('You are in danger', 'info')</div><div class="button" onclick="toast('Engrish', 'success')">toast('Engrish', 'success')</div><br/><br/>
   <hr/>
   <div class="button" onclick="modal('Popup?')">modal('Popup?')</div><div class="button" onclick="modal('Guess What?', {'name': 'What?', 'callback': 'alert(\'You clicked the button!\')'})">modal('Guess What?', {'name': 'What?', 'callback': 'alert(\'You clicked the button!\')'})</div><br/>
-  Note that some crappy native methods are overriden: <div class="button" onclick="alert('Hey')">alert('Hey')</div>
+  Note that some crappy native methods are overriden: <div class="button" onclick="alert('Hey')">alert('Hey')</div><br/><br/>
+  Switch: <div class="button" onclick="document.getElementsByTagName('link')[0].setAttribute('href', 'build/matlight.css')">Lightify</div> <div class="button" onclick="document.getElementsByTagName('link')[0].setAttribute('href', 'build/matdark.css')">Darkify</div>
 </div>
 <div class="card">
   <div class="title">Sample Code</div>
