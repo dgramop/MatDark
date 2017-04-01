@@ -1,6 +1,6 @@
 sudo: required
 script:
-- bobthebuilder.sh
+- bash build/bobthebuilder.sh
 language: sass
 before_install:
 - sudo gem install sass
