@@ -1,6 +1,9 @@
 sudo: required
 script:
-- sudo ./build/bobthebuilder.sh
+- sass main.scss build/matdark.css;
+- sass matlight.scss build/matlight.css;
+- php build/invert-css matlight.css build/matlight.css;
+
 language: sass
 before_install:
 - sudo gem install sass
