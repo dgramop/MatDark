@@ -1,35 +1,99 @@
-function toast(text, type)
+document.onload=function()
 {
+  document.querySelector("bubble-menu").onhover=function(){this.innerHTML="ey"};
+  document.querySelector('header > .title').onclick=function(){window.location.href="/"};
+
+  Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
+    elment.onclick=function()
+    {
+      try
+      {
+        window.location.href=this.getAttribute("href")
+      }
+      catch (e)
+      {
+        console.error("Tab with content "+element.innerHTML+" has no href attribute.")
+      }
+    }
+  })
+
+  //have some code here that will go through <code> tags, check if their type is HTML, and then decide to use innerHTML -> createTextNode to escape chars or stop html parsing for that tag?
+}
+
+function toast(html, type)
+{
+  var toastContainer=document.getElementsByClassName("toastContainer")[0]
   if(document.getElementsByClassName("toastContainer")[0]===undefined)
   {
-    document.getElementsByClassName("dark-body")[0].innerHTML+="<div class=\"toastContainer\" onmouseover=\"this.style.opacity='0.6'\" onmouseout=\"this.style.opacity='1'\"></div>"
+    toastContainer=document.createElement('div');
+    toastContainer.setAttribute('class', 'toastContainer');
+    toastContainer.onmouseover=function(){this.style.opacity=0.6};
+    toastContainer.onmouseout=function(){this.style.opacity=1};
+    document.body.appendChild(toastContainer);
   }
+  var toast=document.createElement('div');
   if(!(type===undefined))
   {
-    document.getElementsByClassName("toastContainer")[0].innerHTML+="<div class=\"toast "+type+"\">"+text+"</div>"
+    toast.setAttribute('class', 'toast '+type);
+    toast.innerHTML=html;
+    toastContainer.appendChild(toast);
   }
   else
   {
-    document.getElementsByClassName("toastContainer")[0].innerHTML+="<div class=\"toast\">"+text+"</div>"
+    toast.setAttribute('class', 'toast');
+    toast.innerHTML=html;
+    toastContainer.appendChild(toast);
   }
-  var origobj;
   setTimeout(function()
   {
-    //change to first element
-    document.getElementsByClassName("toast")[0].style.opacity="0";
-    document.getElementsByClassName("toast")[0].style.visibility="none";
-    origobj=document.getElementsByClassName("toast")[0];
-    setTimeout(function(){origobj.remove()}, 750);
-  }, 5000)//+((Math.floor(text.legnth/13))*1000))
+    toast.style.opacity="0";
+    toast.style.visibility="none";
+    setTimeout(function(){toast.remove();}, 750);
+  }, 5000+((Math.floor(html.length/13))*1000))
 }
 
 //Unlimited buttons. modal(text, button, button, button...)
 //buttons are objects
 //arg.scheme="alert"|"info"|""
-function modal(text)
+function modal(html)
 {
+  var clickSheild = document.createElement("div");
+  clickSheild.setAttribute('class', "clickSheild")
+  clickSheild.onclick=function(){this.style.display='none'}
+  clickSheild.onkeydown=function(event){
+    console.log(event)
+    if(event.keyCode==27)
+    {
+      this.style.display='none';
+      this.remove()
+    }
+  }
+
+  var modal = document.createElement("div");
+  modal.setAttribute('class', "modal")
+  modal.onkeydown=function(event){
+    console.log(event)
+    if(event.keyCode==27)
+    {
+      this.parentElement.style.display='none';
+      this.parentElement.remove()
+      this.remove();
+    }
+  }
+
+  var modalText = document.createElement("div");
+  modalText.setAttribute('class', "modalText")
+  modalText.innerHTML=html;
+
+  var modalButtonContainer = document.createElement("div");
+  modalButtonContainer.setAttribute('class', "modalButtonContainer")
+
+  var closeModal = document.createElement("div");
+  closeModal.setAttribute('class', "closeModal")
+  closeModal.onclick=function(){this.parentElement.parentElement.parentElement.style.display='none'}
+  closeModal.innerHTML="<b>Close</b>" //statically generated, but why not make it look sexy in javascript?
+
   var buttons=Array.prototype.slice.call(arguments, 1);
-  var compiledButtons="";
   buttons.forEach(function(arg)
   {
     if(arg.scheme===undefined)
@@ -44,9 +108,19 @@ function modal(text)
     {
       arg.name="";
     }
-    compiledButtons+="<div class=\"modalButton "+arg.scheme+"\" onclick=\"this.parentElement.parentElement.parentElement.style.display='none';"+arg.callback.replace('"', '\\\"')+"\">"+arg.name+"</div>"
-  })
-  document.getElementsByClassName("dark-body")[0].innerHTML+="<div class=\"clickSheild\"><div class=\"modal\"><div class=\"modalText\">"+text+"</div><div class=\"modalButtonContainer\">"+compiledButtons+"<div class=\"closeModal\" onclick=\"this.parentElement.parentElement.parentElement.style.display='none'\">Close</div></div></div></div>"
+
+    var button = document.createElement("div");
+    button.setAttribute('class', "modalButton "+arg.scheme);
+    button.onclick=function(){this.parentElement.parentElement.parentElement.style.display='none'; arg.callback()}
+    button.innerHTML=arg.name;
+    modalButtonContainer.appendChild(button)
+    })
+
+  modal.appendChild(modalText);
+  modalButtonContainer.appendChild(closeModal);
+  modal.appendChild(modalButtonContainer);
+  clickSheild.appendChild(modal);
+  document.body.appendChild(clickSheild);
 }
 
 //Native functions that are overriden are still available for use.
@@ -58,56 +132,24 @@ window.alert=function(text)
   modal(text);
 }
 
-//depricated!!!!!
-//Shitty code alert
 window.confirm=function(text)
 {
-  nativeconfirm(text+"\n\n Whoever is the developer of this website is using a feature that is not in style with the stylesheet\n\nIf you are the developer, use nativeconfirm() to not deal with this message. confirm() is not overriden because of the blocking functionality.\n\n A promise based version may be added later.")
+  nativeconfirm(text)
+  console.warn("Using confirm is not allowed within this stylesheet. Please use something else.")
 }
-/*document.getElementsByTagName("code").forEach(function(tag){
-  tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
-})*/
-
-Array.from(document.querySelector('header > .title')).forEach(function(element){
-  element.onclick=function(){window.location.href="/"}
-})
-
-Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
-  console.log("tick");
-  elment.onclick=function()
-  {
-    try
-    {
-      console.log(this.getAttribute("href"));
-      window.location.href=this.getAttribute("href")
-    }
-    catch (e)
-    {
-      //tab has nothing set, could spit out error... nah
-    }
-  }
-})
 
 window.onscroll=function()
 {
-  if(window.scrollY<=document.body.clientHeight+50)
-  {
-    Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
-      elment.style.opacity='0';
-    })
-  }
-  else if(window.scrollY<=document.body.clientHeight+80)
+  if(window.scrollY<=50)
   {
     Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
       elment.style.opacity='1';
-      elment.style.position="fixed";
     })
   }
   else
   {
     Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
       elment.style.opacity='0.75';
-      elment.style.position="fixed";
     })
   }
 }
