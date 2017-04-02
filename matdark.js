@@ -51,7 +51,7 @@ function toast(html, type)
     toast.style.opacity="0";
     toast.style.visibility="none";
     setTimeout(function(){toast.remove(); console.log(toast)}, 750);
-  }, 5000+((Math.floor(text.length/13))*1000)))
+  }, 5000+((Math.floor(text.legnth/13))*1000))
 }
 
 //Unlimited buttons. modal(text, button, button, button...)
