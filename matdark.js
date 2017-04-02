@@ -21,29 +21,37 @@ document.onload=function()
   //have some code here that will go through <code> tags, check if their type is HTML, and then decide to use innerHTML -> createTextNode to escape chars or stop html parsing for that tag?
 }
 
-function toast(text, type)
+function toast(html, type)
 {
+  var toastContainer=document.getElementsByClassName("toastContainer")[0]
   if(document.getElementsByClassName("toastContainer")[0]===undefined)
   {
-    document.getElementsByClassName("dark-body")[0].innerHTML+="<div class=\"toastContainer\" onmouseover=\"this.style.opacity='0.6'\" onmouseout=\"this.style.opacity='1'\"></div>"
+    toastContainer=document.createElement('div');
+    toastContainer.setAttribute('class', 'toastContainer');
+    toastContainer.onmouseover=function(){this.style.opacity=0.6};
+    toastContainer.onmouseout=function(){this.style.opacity=1};
+    document.body.appendChild(toastContainer);
   }
   if(!(type===undefined))
   {
-    document.getElementsByClassName("toastContainer")[0].innerHTML+="<div class=\"toast "+type+"\">"+text+"</div>"
+    var toast=document.createElement('div');
+    toast.setAttribute('class', 'toast '+type);
+    toast.innerHTML=html;
+    toastContainer.appendChild(toast);
   }
   else
   {
-    document.getElementsByClassName("toastContainer")[0].innerHTML+="<div class=\"toast\">"+text+"</div>"
+    var toast=document.createElement('div');
+    toast.setAttribute('class', 'toast');
+    toast.innerHTML=html;
+    toastContainer.appendChild(toast);
   }
-  var origobj;
   setTimeout(function()
   {
-    //change to first element
-    document.getElementsByClassName("toast")[0].style.opacity="0";
-    document.getElementsByClassName("toast")[0].style.visibility="none";
-    origobj=document.getElementsByClassName("toast")[0];
-    setTimeout(function(){origobj.remove(); console.log(origobj)}, 750);
-  }, 5000)//+((Math.floor(text.legnth/13))*1000))
+    toast.style.opacity="0";
+    toast.style.visibility="none";
+    setTimeout(function(){toast.remove(); console.log(toast)}, 750);
+  }, 5000+((Math.floor(text.length/13))*1000)))
 }
 
 //Unlimited buttons. modal(text, button, button, button...)
