@@ -222,8 +222,8 @@ hr {
   .bubble-menu:hover {
     transform: scale(2);
     position: fixed;
-    right: 12em;
-    bottom: 12em; }
+    right: 2em;
+    bottom: 2em; }
 
 .pin-bl {
   position: fixed;
