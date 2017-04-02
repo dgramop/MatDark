@@ -17,6 +17,8 @@ document.onload=function()
       }
     }
   })
+
+  //have some code here that will go through <code> tags, check if their type is HTML, and then decide to use innerHTML -> createTextNode to escape chars or stop html parsing for that tag?
 }
 
 function toast(text, type)
@@ -40,17 +42,34 @@ function toast(text, type)
     document.getElementsByClassName("toast")[0].style.opacity="0";
     document.getElementsByClassName("toast")[0].style.visibility="none";
     origobj=document.getElementsByClassName("toast")[0];
-    setTimeout(function(){origobj.remove()}, 750);
+    setTimeout(function(){origobj.remove(); console.log(origobj)}, 750);
   }, 5000)//+((Math.floor(text.legnth/13))*1000))
 }
 
 //Unlimited buttons. modal(text, button, button, button...)
 //buttons are objects
 //arg.scheme="alert"|"info"|""
-function modal(text)
+function modal(html)
 {
+  var clickSheild = document.createElement("div");
+  clickSheild.setAttribute('class', "clickSheild")
+
+  var modal = document.createElement("div");
+  modal.setAttribute('class', "modal")
+
+  var modalText = document.createElement("div");
+  modalText.setAttribute('class', "modalText")
+  modalText.innerHTML=html;
+
+  var modalButtonContainer = document.createElement("div");
+  modalButtonContainer.setAttribute('class', "modalButtonContainer")
+
+  var closeModal = document.createElement("div");
+  closeModal.setAttribute('class', "closeModal")
+  closeModal.onclick=function(){this.parentElement.parentElement.parentElement.style.display='none'}
+  closeModal.innerHTML="<b>Close</b>" //statically generated, but why not make it look sexy in javascript?
+
   var buttons=Array.prototype.slice.call(arguments, 1);
-  var compiledButtons="";
   buttons.forEach(function(arg)
   {
     if(arg.scheme===undefined)
@@ -65,9 +84,19 @@ function modal(text)
     {
       arg.name="";
     }
-    compiledButtons+="<div class=\"modalButton "+arg.scheme+"\" onclick=\"this.parentElement.parentElement.parentElement.style.display='none';"+arg.callback.replace('"', '\\\"')+"\">"+arg.name+"</div>"
-  })
-  document.getElementsByClassName("dark-body")[0].innerHTML+="<div class=\"clickSheild\"><div class=\"modal\"><div class=\"modalText\">"+text+"</div><div class=\"modalButtonContainer\">"+compiledButtons+"<div class=\"closeModal\" onclick=\"this.parentElement.parentElement.parentElement.style.display='none'\">Close</div></div></div></div>"
+
+    var button = document.createElement("div");
+    button.setAttribute('class', "modalButton "+arg.scheme);
+    button.onclick=function(){this.parentElement.parentElement.parentElement.style.display='none'; arg.callback()}
+    button.innerHTML=arg.name;
+    modalButtonContainer.appendChild(button)
+    })
+
+  modal.appendChild(modalText);
+  modalButtonContainer.appendChild(closeModal);
+  modal.appendChild(modalButtonContainer);
+  clickSheild.appendChild(modal);
+  document.body.appendChild(clickSheild);
 }
 
 //Native functions that are overriden are still available for use.
@@ -79,15 +108,11 @@ window.alert=function(text)
   modal(text);
 }
 
-//depricated!!!!!
-//Shitty code alert
 window.confirm=function(text)
 {
-  nativeconfirm(text+"\n\n Whoever is the developer of this website is using a feature that is not in style with the stylesheet\n\nIf you are the developer, use nativeconfirm() to not deal with this message. confirm() is not overriden because of the blocking functionality.\n\n A promise based version may be added later.")
+  nativeconfirm(text)
+  console.warn("Using confirm is not allowed within this stylesheet. Please use something else.")
 }
-/*document.getElementsByTagName("code").forEach(function(tag){
-  tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
-})*/
 
 window.onscroll=function()
 {
