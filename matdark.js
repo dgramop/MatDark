@@ -1,3 +1,24 @@
+document.getElementsByTagName("body")[0].onload=function()
+{
+  document.querySelector("bubble-menu").onhover=function(){this.innerHTML="ey"};
+  document.querySelector('header > .title').onclick=function(){window.location.href="/"};
+
+  Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
+    elment.onclick=function()
+    {
+      try
+      {
+        console.log(this.getAttribute("href"));
+        window.location.href=this.getAttribute("href")
+      }
+      catch (e)
+      {
+        console.error("Tab with content "+element.innerHTML+" has no href attribute.")
+      }
+    }
+  })
+}
+
 function toast(text, type)
 {
   if(document.getElementsByClassName("toastContainer")[0]===undefined)
@@ -68,49 +89,18 @@ window.confirm=function(text)
   tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
 })*/
 
-document.querySelector('header > .title').onclick=function(){window.location.href="/"};
-
-Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
-  console.log("tick");
-  elment.onclick=function()
-  {
-    try
-    {
-      console.log(this.getAttribute("href"));
-      window.location.href=this.getAttribute("href")
-    }
-    catch (e)
-    {
-      console.error("Tab with content "+element.innerHTML+" has no href attribute.")
-      //tab has nothing set, could spit out error... nah
-    }
-  }
-})
-
-/*
 window.onscroll=function()
 {
-  if(window.scrollY<=document.body.clientHeight+50)
-  {
-    Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
-      elment.style.opacity='0';
-    })
-  }
-  else if(window.scrollY<=document.body.clientHeight+80)
+  if(window.scrollY<=50)
   {
     Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
       elment.style.opacity='1';
-      elment.style.position="fixed";
     })
   }
   else
   {
     Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
       elment.style.opacity='0.75';
-      elment.style.position="fixed";
     })
   }
 }
-*/
-
-document.querySelector("bubble-menu").onHover=function(){this.innerHTML="ey"};
