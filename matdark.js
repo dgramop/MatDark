@@ -1,4 +1,4 @@
-document.getElementsByTagName("body")[0].onload=function()
+document.onload=function()
 {
   document.querySelector("bubble-menu").onhover=function(){this.innerHTML="ey"};
   document.querySelector('header > .title').onclick=function(){window.location.href="/"};
