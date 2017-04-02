@@ -68,9 +68,7 @@ window.confirm=function(text)
   tag.innerHTML=tag.innerHTML.replace("'(.*)'", ".")
 })*/
 
-Array.from(document.querySelector('header > .title')).forEach(function(element){
-  element.onclick=function(){window.location.href="/"}
-})
+document.querySelector('header > .title').onclick=function(){window.location.href="/"};
 
 Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
   console.log("tick");
