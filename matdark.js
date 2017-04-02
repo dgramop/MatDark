@@ -81,6 +81,7 @@ Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(el
     }
     catch (e)
     {
+      console.error("Tab with content "+element.innerHTML+" has no href attribute.")
       //tab has nothing set, could spit out error... nah
     }
   }
