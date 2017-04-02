@@ -111,3 +111,5 @@ window.onscroll=function()
     })
   }
 }
+
+document.querySelector("bubble-menu").onHover=function(){this.innerHTML="ey"};
