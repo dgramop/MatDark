@@ -57,27 +57,31 @@ function toast(html, type)
 //arg.scheme="alert"|"info"|""
 function modal(html)
 {
+  //maybe make this return an object that people can control (eg modal.close() and stuff)
+  var modal = document.createElement("div");
   var clickSheild = document.createElement("div");
+
+  modal.setAttribute('class', "modal")
+  modal.onkeyup=function(event){
+    console.log(event)
+    if(event.keyCode==27)
+    {
+      clickSheild.remove()
+      this.parentElement.style.display='none';
+      this.parentElement.remove()
+      this.remove();
+    }
+  }
+
   clickSheild.setAttribute('class', "clickSheild")
-  clickSheild.onclick=function(){this.style.display='none'}
-  clickSheild.onkeydown=function(event){
+  clickSheild.onclick=function(){this.style.display='none'; modal.style.display="none"; this.remove(); clickSheild.remove();}
+  clickSheild.onkeyup=function(event){
     console.log(event)
     if(event.keyCode==27)
     {
       this.style.display='none';
       this.remove()
-    }
-  }
-
-  var modal = document.createElement("div");
-  modal.setAttribute('class', "modal")
-  modal.onkeydown=function(event){
-    console.log(event)
-    if(event.keyCode==27)
-    {
-      this.parentElement.style.display='none';
-      this.parentElement.remove()
-      this.remove();
+      modal.remove()
     }
   }
 
@@ -90,7 +94,7 @@ function modal(html)
 
   var closeModal = document.createElement("div");
   closeModal.setAttribute('class', "closeModal")
-  closeModal.onclick=function(){this.parentElement.parentElement.parentElement.style.display='none'}
+  closeModal.onclick=function(){this.parentElement.parentElement.style.display='none'; this.parentElement.parentElement.remove(); clickSheild.remove();}
   closeModal.innerHTML="<b>Close</b>" //statically generated, but why not make it look sexy in javascript?
 
   var buttons=Array.prototype.slice.call(arguments, 1);
@@ -111,7 +115,7 @@ function modal(html)
 
     var button = document.createElement("div");
     button.setAttribute('class', "modalButton "+arg.scheme);
-    button.onclick=function(){this.parentElement.parentElement.parentElement.style.display='none'; arg.callback()}
+    button.onclick=function(){this.parentElement.parentElement.style.display='none'; this.parentElement.parentElement.remove(); clickSheild.remove(); arg.callback()}
     button.innerHTML=arg.name;
     modalButtonContainer.appendChild(button)
     })
@@ -119,7 +123,7 @@ function modal(html)
   modal.appendChild(modalText);
   modalButtonContainer.appendChild(closeModal);
   modal.appendChild(modalButtonContainer);
-  clickSheild.appendChild(modal);
+  document.body.appendChild(modal);
   document.body.appendChild(clickSheild);
 }
 
