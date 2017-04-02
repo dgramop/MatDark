@@ -86,6 +86,7 @@ Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(el
   }
 })
 
+/*
 window.onscroll=function()
 {
   if(window.scrollY<=document.body.clientHeight+50)
@@ -109,5 +110,6 @@ window.onscroll=function()
     })
   }
 }
+*/
 
 document.querySelector("bubble-menu").onHover=function(){this.innerHTML="ey"};
