@@ -8,7 +8,6 @@ document.onload=function()
     {
       try
       {
-        console.log(this.getAttribute("href"));
         window.location.href=this.getAttribute("href")
       }
       catch (e)
@@ -32,16 +31,15 @@ function toast(html, type)
     toastContainer.onmouseout=function(){this.style.opacity=1};
     document.body.appendChild(toastContainer);
   }
+  var toast=document.createElement('div');
   if(!(type===undefined))
   {
-    var toast=document.createElement('div');
     toast.setAttribute('class', 'toast '+type);
     toast.innerHTML=html;
     toastContainer.appendChild(toast);
   }
   else
   {
-    var toast=document.createElement('div');
     toast.setAttribute('class', 'toast');
     toast.innerHTML=html;
     toastContainer.appendChild(toast);
