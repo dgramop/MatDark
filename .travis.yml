@@ -7,3 +7,5 @@ script:
 language: sass
 before_install:
  - sudo gem install sass
+notifications:
+  webhooks: https://dgramop-matdark.getbadges.io/api/app/webhook/8b2b9c9b-10c5-4bf4-b991-65e65a852f30
