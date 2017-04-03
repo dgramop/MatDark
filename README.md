@@ -39,5 +39,6 @@ MatDark is _not_ to be confused with Material, or Material Design, although its 
 
 
 ## Active Contributers
-#### In order to stay an active contributer, you must have a commit at least once every 1 week.
-#### If you pull request or solve issues very often, you'll become a contributer.
+<small>In order to stay an active contributer, you must have a commit at least once every 1 week.</small>
+<small>If you pull request or solve issues very often, you'll become a contributer.</small>
+### @AutinTech -> Thanks for adding shadows... Sorry I killed matlight and replaced it with my own xD
