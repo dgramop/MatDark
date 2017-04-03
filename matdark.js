@@ -167,7 +167,7 @@ window.onscroll=function()
   else
   {
     Array.prototype.forEach.call(document.getElementsByClassName("fix"), function(elment){
-      elment.style.opacity='0.75';
+      elment.style.opacity='0.2';
     })
   }
 }

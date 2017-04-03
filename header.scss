@@ -8,7 +8,7 @@ header {
     font-size: 1.6em;
   }
   &.fix {
-    background-color: #090909;
+    background-color: #3e1313;
     width: calc(100% - 5rem);
     height: 4rem;
     padding: 1rem;
@@ -34,6 +34,8 @@ header {
       vertical-align:middle;
       display: inline-block;
       padding: 0.75em;
+      opacity:0.8;
+      border-radius: 0.75rem;
       margin: 0.75em;
       border: 2px solid #0c0c0c;
       background-color: #0c0c0c;
