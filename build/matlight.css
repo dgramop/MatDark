@@ -71,7 +71,9 @@ textarea {
   textarea:focus {
     border-color: #94008b; }
 
-.button {
+/* using the element button doesn't work so well*/
+button, .button {
+  outline: none;
   display: inline-block;
   padding: 0.75em;
   margin: 0.75em;
@@ -85,7 +87,10 @@ textarea {
   -ms-user-select: none;
   cursor: pointer;
   transition: background-color 500ms; }
-  .button:hover {
+  buttonbutton, .buttonbutton {
+    background-color: white;
+    border-color: white; }
+  button:hover, .button:hover {
     background-color: white;
     border-color: white;
     /* This animation functions as a gentle reminder to click or not to click */
