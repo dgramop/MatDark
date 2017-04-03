@@ -50,6 +50,16 @@ function toast(html, type)
     toast.style.visibility="none";
     setTimeout(function(){toast.remove();}, 750);
   }, 5000+((Math.floor(html.length/13))*1000))
+
+  var toaster = new Object();
+  toaster.close = function()
+  {
+  toast.style.opacity="0";
+  toast.style.visibility="none";
+  setTimeout(function(){toast.remove();}, 750);
+  }
+  toaster.element=toast;
+  return toaster;  
 }
 
 //Unlimited buttons. modal(text, button, button, button...)

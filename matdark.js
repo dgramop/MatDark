@@ -59,7 +59,8 @@ function toast(html, type)
   setTimeout(function(){toast.remove();}, 750);
   }
   toaster.element=toast;
-  return toaster;  
+  toaster.element.onclick=function(){toaster.close()}
+  return toaster;
 }
 
 //Unlimited buttons. modal(text, button, button, button...)
