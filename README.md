@@ -39,5 +39,5 @@ MatDark is _not_ to be confused with Material, or Material Design, although its 
 
 
 ## Active Contributers
-
-Thanks to AutinDroid for helping out on this project. Although he is somewhat new to styling, his skills have surpassed most. He shares with MatDark the same sense of subtlty in animation and in display: simple, and easy.
+#### In order to stay an active contributer, you must have a commit at least once every 2 weeks.
+#### If you pull request or solve issues very often, you'll become a contributer.
