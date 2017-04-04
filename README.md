@@ -38,7 +38,9 @@ We want to rethink the library, by breaking conventions and stereotypes in order
 MatDark is _not_ to be confused with Material, or Material Design, although its name is derived from Material + Flat. 
 
 
-## Active Contributers
-<small>In order to stay an active contributer, you must have a commit at least once every 1 week.</small>
-<small>If you pull request or solve issues very often, you'll become a contributer.</small>
-### @AutinTech -> Thanks for adding shadows... Sorry I killed matlight and replaced it with my own xD
+## Contributers
+<small>As of now, people who commit or pull request regularly will be added here. </small>
+<small>As the standards go up, or if you fail to pull or commit for a while, you may be removed.</small>
+<small>People pending removal have a double bang tag ```[!!]```</small>
+###### @AutinTech [!!]
+	Thanks for adding shadows... Sorry I killed matlight and replaced it with my own xD
