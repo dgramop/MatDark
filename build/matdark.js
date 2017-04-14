@@ -1,5 +1,5 @@
-document.onload=function(){
-  document.querySelector("bubble-menu").onmouseover=function(){this.innerHTML="ey"};
+document.addEventListener("DOMContentLoaded", function(event) {
+  //document.querySelector("bubble-menu").onmouseover=function(){this.innerHTML="ey"};
   document.querySelector('header > .title').onclick=function(){window.location.href="/"};
 
   Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
@@ -22,7 +22,7 @@ document.onload=function(){
     console.warn("<button> Tag found on page. They are out of style, and there is intentional faulty CSS added. Please change it to: <div id="+ele.getAttribute('id')+" class='button "+ele.getAttribute("class")+"' onclick="+ele.getAttribute("onclick")+" class='button'>"+ele.innerHTML+"</div>")
   })
   //have some code here that will go through <code> tags, check if their type is HTML, and then decide to use innerHTML -> createTextNode to escape chars or stop html parsing for that tag?
-}
+});
 
 function toast(html, type)
 {
