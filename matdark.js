@@ -1,5 +1,4 @@
-document.onload=function()
-{
+document.onload=function(){
   document.querySelector("bubble-menu").onmouseover=function(){this.innerHTML="ey"};
   document.querySelector('header > .title').onclick=function(){window.location.href="/"};
 
