@@ -4,11 +4,13 @@ document.onload=function()
   document.querySelector('header > .title').onclick=function(){window.location.href="/"};
 
   Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
+    console.log("Tab eached")
     elment.onclick=function()
     {
       try
       {
         window.location.href=this.getAttribute("href")
+        console.log("Tab click")
       }
       catch (e)
       {
