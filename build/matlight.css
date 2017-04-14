@@ -192,7 +192,8 @@ hr {
 .dark-body {
   background-color: #e3e3e3;
   color: black;
-  font-family: 'Roboto'; }
+  font-family: 'Roboto';
+  padding-top: 4rem; }
 
 .card {
   border: 3px solid white;
