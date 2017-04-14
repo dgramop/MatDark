@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-  document.querySelector("bubble-menu").onmouseover=function(){this.innerHTML="ey"};
+  //document.querySelector("bubble-menu").onmouseover=function(){this.innerHTML="ey"};
   document.querySelector('header > .title').onclick=function(){window.location.href="/"};
 
   Array.prototype.forEach.call(document.getElementsByClassName("tab"), function(elment){
