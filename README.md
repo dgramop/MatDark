@@ -42,4 +42,3 @@ MatDark is _not_ to be confused with Material, or Material Design, although its 
 <small>As of now, people who commit or pull request regularly will be added here. </small>
 <small>As the standards go up, or if you fail to pull or commit for a while, you may be removed.</small>
 <small>People pending removal have a double bang tag ```[!!]```</small>
-###### [!!] @AutinTech Thanks for adding shadows... Sorry I killed matlight and replaced it with my own xD
