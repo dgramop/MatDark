@@ -49,7 +49,7 @@ input {
   background-color: white;
   color: black;
   margin: 1em; }
-  input[type=text], input[type=email] {
+  input[type=text], input[type=email], input[type=password] {
     border-top: none;
     border-left: none;
     border-right: none;
@@ -57,7 +57,7 @@ input {
     margin: 1em;
     -webkit-transition: border-bottom-color 1s;
     transition: border-bottom-color 1s; }
-  input[type=text]:focus, input[type=email]:focus {
+  input[type=text]:focus, input[type=email], input[type=password]:focus {
     border-bottom-color: #94008b; }
 
 textarea {
