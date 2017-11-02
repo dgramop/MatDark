@@ -5,7 +5,7 @@ input {
   background-color: black;
   color: white;
   margin: 1em;
-  &[type=text], &[type=email] {
+  &[type=text], &[type=email], &[type=password] {
     border-top: none;
     border-left: none;
     border-right: none;
@@ -14,7 +14,7 @@ input {
     -webkit-transition: border-bottom-color 1s;
     transition: border-bottom-color 1s;
   }
-  &[type=text]:focus, &[type=email]:focus {
+  &[type=text]:focus, &[type=email], &[type=password]:focus {
     border-bottom-color: #6bff74;
   }
 }
